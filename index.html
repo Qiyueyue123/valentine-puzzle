@@ -692,8 +692,8 @@
         }
         
         function scramblePuzzle() {
-            // TESTING NOTE: Use "i < 1" instead of "i < 4" so that the puzzle is one move away from completion
-            for (let i = 0; i < 4; i++) {
+            // TESTING NOTE: Use "i < 1" instead of "i < 6" so that the puzzle is one move away from completion
+            for (let i = 0; i < 6; i++) {
                 const emptyIndex = currentState.indexOf(EMPTY_PIECE);
                 const validMoves = getValidMoves(emptyIndex);
                 const randomMove = validMoves[Math.floor(Math.random() * validMoves.length)];
