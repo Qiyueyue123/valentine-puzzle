@@ -661,6 +661,10 @@
         const successView = document.getElementById('successView');
         
         envelope.addEventListener('click', () => {
+            //music play
+            const music = document.getElementById('bgMusic');
+            music.play().catch(error => console.log("Audio play failed:", error));
+
             envelope.style.pointerEvents = 'none';
             const heart = envelope.querySelector('.envelope-heart');
             heart.classList.add('hidden');
@@ -755,6 +759,9 @@
         }
         
         function onPuzzleSolved() {
+            const music = document.getElementById('bgMusic');
+            music.volume = 1.0;
+            
             const puzzleContainer = document.getElementById('puzzleContainer');
             const puzzleGridWrap = document.getElementById('puzzleGridWrap');
             const puzzleRevealText = document.getElementById('puzzleRevealText');
@@ -825,5 +832,8 @@
             setTimeout(() => confetti.remove(), (duration + 0.5) * 1000);
         }
     </script>
+    <audio id="bgMusic" loop>
+    <source src="assets/cocobutta.mp3" type="audio/mpeg">
+</audio>
 </body>
 </html>
