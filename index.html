@@ -663,6 +663,7 @@
         envelope.addEventListener('click', () => {
             //music play
             const music = document.getElementById('bgMusic');
+            music.volume = 0.5;
             music.play().catch(error => console.log("Audio play failed:", error));
 
             envelope.style.pointerEvents = 'none';
@@ -761,7 +762,7 @@
         function onPuzzleSolved() {
             const music = document.getElementById('bgMusic');
             music.volume = 1.0;
-            
+
             const puzzleContainer = document.getElementById('puzzleContainer');
             const puzzleGridWrap = document.getElementById('puzzleGridWrap');
             const puzzleRevealText = document.getElementById('puzzleRevealText');
