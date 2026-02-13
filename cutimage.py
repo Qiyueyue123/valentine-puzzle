@@ -16,6 +16,7 @@ def slice_image(image_path, output_folder):
     for r in range(3):
         for c in range(3):
             # Define the bounding box (left, upper, right, lower)
+            left = c * tile_w
             top = r * tile_h
             right = (c + 1) * tile_w
             bottom = (r + 1) * tile_h
